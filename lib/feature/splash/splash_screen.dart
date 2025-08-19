@@ -5,7 +5,7 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen>
@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
     // Quando a animação terminar, navegue para a próxima tela
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.of(context).pushReplacementNamed('/home');
+        Navigator.of(context).pushReplacementNamed('/onboarding');
       }
     });
   }
@@ -37,18 +37,18 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Cor de fundo da splash
+      backgroundColor: Colors.white,
       body: Center(
         child: Lottie.asset(
-          'assets/animations/splash_animation.json',
+          'assets/animations/splash_animation_simple.json',
           controller: _controller,
           onLoaded: (composition) {
             _controller
               ..duration = composition.duration
               ..forward();
           },
-          width: 300,
-          height: 300,
+          width: 200,
+          height: 200,
           fit: BoxFit.contain,
         ),
       ),

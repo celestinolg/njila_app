@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // Paleta de cores Njila - Dark
-  static const Color vermelhoEnergia = Color(0xFFE63946);
+  static const Color vermelhoEnergia = Color(0XFF7B61FF);
   static const Color amareloVitalidade = Color(0xFFFFD60A);
-  static const Color pretoElegante = Color(0xFF121212);
+  static const Color pretoElegante = Color(0XFF28333F);
   static const Color cinzaEscuro = Color(0xFF1E1E1E);
   static const Color verdeSucesso = Color(0xFF06D6A0);
   static const Color textoClaro = Colors.white;

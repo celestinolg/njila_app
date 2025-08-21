@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:njila_app/core/widgets/button.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -49,29 +50,14 @@ class _SplashScreenState extends State<SplashScreen>
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),
-              SizedBox(
+              Button(
+                text: 'Get Started',
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/onboarding');
+                },
                 width: double.infinity,
                 height: 56,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/onboarding');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0XFF7B61FF),
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
+                fontSize: 18,
               ),
             ],
           ),

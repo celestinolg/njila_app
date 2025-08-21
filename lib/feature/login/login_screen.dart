@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
             //mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset('assets/img/Logo.png', width: 100, fit: BoxFit.cover),
+              Image.asset('assets/img/logo.png', width: 100, fit: BoxFit.cover),
               const SizedBox(height: 50),
               const Text(
                 'Log In',

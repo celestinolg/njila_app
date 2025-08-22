@@ -114,7 +114,7 @@ Widget homeTopInfo({
           Container(
             margin: EdgeInsets.only(top: 16.0),
             width: double.infinity,
-            height: 87,
+            padding: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
               color: Colors.white12,
               borderRadius: BorderRadius.circular(16.0),
@@ -124,9 +124,157 @@ Widget homeTopInfo({
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset('assets/img/run.png', width: 87, height: 87),
+                Row(
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF7B61FF),
+                            borderRadius: BorderRadius.circular(100.0),
+                          ),
+                          child: Image.asset(
+                            'assets/img/run.png',
+                            width: 87,
+                            height: 87,
+                          ),
+                        ),
+                        Positioned(
+                          right: 4,
+                          bottom: 4,
+                          child: Container(
+                            width: 16,
+                            height: 16,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF55CB74),
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.white54,
+                                width: 4,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 8.0),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '26 May',
+                          style: TextStyle(
+                            color: Colors.white38,
+                            fontSize: 15.0,
+                          ),
+                        ),
+
+                        Text(
+                          'Today',
+                          style: TextStyle(
+                            color: Color(0xFF55CB74),
+                            fontSize: 19.0,
+                          ),
+                        ),
+                        Text(
+                          '01:09:44',
+                          style: TextStyle(color: Colors.white, fontSize: 13.0),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Transform.flip(
+                      flipX: true, // -90 degrees in radians
+                      child: SizedBox(
+                        height: 80,
+                        width: 80,
+                        child: CircularProgressIndicator(
+                          value: indicatorValue,
+                          backgroundColor: Colors.white24,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Color(0xFFE742EC),
+                          ),
+                          strokeWidth: 6,
+                        ),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.directions_walk_rounded,
+                          color: Colors.white54,
+                          size: 20.0,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '2345',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Container(
+                              height: 1.5,
+                              width: 35,
+                              decoration: BoxDecoration(color: Colors.white38),
+                            ),
+                            Text(
+                              '5000',
+                              style: TextStyle(
+                                color: Color(0xFF55CB74),
+                                fontSize: 14.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
+          ),
+          Row(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 16.0),
+                width: 175,
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  color: Colors.white12,
+                  borderRadius: BorderRadius.circular(16.0),
+                  border: Border.all(
+                    color: Colors.white.withAlpha(40),
+                    width: 1,
+                  ),
+                ),
+              ),
+              SizedBox(width: 16),
+              Container(
+                margin: EdgeInsets.only(top: 16.0),
+                width: 175,
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  color: Colors.white12,
+                  borderRadius: BorderRadius.circular(16.0),
+                  border: Border.all(
+                    color: Colors.white.withAlpha(40),
+                    width: 1,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

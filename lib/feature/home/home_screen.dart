@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:njila_app/feature/home/widgets/custom_app_bar.dart';
 import 'package:njila_app/feature/home/widgets/home_top_info.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,65 +11,16 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   double metaValue = 15000;
-  double currentValue = 14000;
+  double currentValue = 500;
   double indicatorValue = 0.0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF28333F),
-      appBar: AppBar(
-        backgroundColor: Color(0xFF7B61FF).withAlpha(197),
-        leading: Container(
-          width: 48,
-          height: 48,
-          color: Colors.transparent,
-          child: Icon(Icons.menu, color: Colors.white),
-        ),
-        title: Row(
-          children: [
-            CircleAvatar(
-              radius: 24,
-              backgroundImage: AssetImage('assets/img/user_img.png'),
-            ),
-            const SizedBox(width: 10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Olá!',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const Text(
-                  'Utilizador',
-                  style: TextStyle(color: Colors.white, fontSize: 16.0),
-                ),
-              ],
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.inbox_outlined, color: Colors.white, size: 24),
-            onPressed: () {
-              // Ação para notificações
-            },
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.mark_email_unread_outlined,
-              color: Colors.white,
-              size: 24,
-            ),
-            onPressed: () {
-              // Ação para configurações
-            },
-          ),
-        ],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: customAppBar(),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -133,7 +85,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                       Icons.share,
                                       color: Colors.white,
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      setState(() {
+                                        currentValue += 500;
+                                        currentValue = currentValue.clamp(
+                                          0.0,
+                                          metaValue,
+                                        );
+                                      });
+                                    },
                                     label: Text('Share'),
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Color(

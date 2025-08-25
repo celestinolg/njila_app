@@ -37,16 +37,20 @@ Widget customAppBar() {
     ),
     actions: [
       IconButton(
-        icon: Icon(Icons.inbox_outlined, color: Colors.white, size: 24),
+        icon: Image.asset(
+          'assets/img/direct-normal.png',
+          width: 32,
+          height: 32,
+        ),
         onPressed: () {
           // Ação para notificações
         },
       ),
       IconButton(
-        icon: Icon(
-          Icons.mark_email_unread_outlined,
-          color: Colors.white,
-          size: 24,
+        icon: Image.asset(
+          'assets/img/sms-notification.png',
+          width: 32,
+          height: 32,
         ),
         onPressed: () {
           // Ação para configurações

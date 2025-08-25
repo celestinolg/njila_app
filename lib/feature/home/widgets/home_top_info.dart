@@ -11,12 +11,12 @@ Widget homeTopInfo({
   indicatorValue = indicatorValue.clamp(0.0, 1.0);
   return Container(
     width: double.infinity,
-    height: 416.0,
+    padding: EdgeInsets.only(bottom: 16.0),
     decoration: BoxDecoration(
       color: Color(0xFF7B61FF).withAlpha(200),
       borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(50),
-        bottomRight: Radius.circular(50),
+        bottomLeft: Radius.circular(40),
+        bottomRight: Radius.circular(40),
       ),
       gradient: LinearGradient(
         colors: [Color(0xFF7B61FF), Color(0xFF7B61FF).withAlpha(50)],
@@ -245,11 +245,10 @@ Widget homeTopInfo({
             ),
           ),
           Row(
-            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 margin: EdgeInsets.only(top: 16.0),
-                width: 175,
                 padding: EdgeInsets.all(20.0),
                 decoration: BoxDecoration(
                   color: Colors.white12,
@@ -259,11 +258,42 @@ Widget homeTopInfo({
                     width: 1,
                   ),
                 ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '53,524',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 4.0),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/img/steps.png',
+                          width: 20,
+                          height: 20,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 4.0),
+                        Text(
+                          'Steps',
+                          style: TextStyle(
+                            color: Colors.white54,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(width: 16),
               Container(
                 margin: EdgeInsets.only(top: 16.0),
-                width: 175,
                 padding: EdgeInsets.all(20.0),
                 decoration: BoxDecoration(
                   color: Colors.white12,
@@ -272,6 +302,39 @@ Widget homeTopInfo({
                     color: Colors.white.withAlpha(40),
                     width: 1,
                   ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '1000',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 4.0),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/img/coin.png',
+                          width: 20,
+                          height: 20,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 4.0),
+                        Text(
+                          'Earned Points',
+                          style: TextStyle(
+                            color: Colors.white54,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],

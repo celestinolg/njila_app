@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:njila_app/feature/history/history_screen.dart';
 import 'package:njila_app/feature/login/login_screen.dart';
 import 'package:njila_app/feature/onboarding/onboarding_screen.dart';
 import 'feature/splash/splash_screen.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/onboarding': (context) => const OnboardingScreen(),
         '/login': (context) => const LoginScreen(),
         '/home': (context) => HomeScreen(),
+        '/history': (context) => const HistoryScreen(),
       },
     );
   }

@@ -44,7 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                child: Column(children: [shareSection(), historySection()]),
+                child: Column(
+                  children: [shareSection(), historySection(context)],
+                ),
               ),
             ],
           ),

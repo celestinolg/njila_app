@@ -8,7 +8,16 @@ Widget historySectionCard() {
       color: Colors.transparent,
       borderRadius: BorderRadius.circular(16.0),
       border: Border.all(color: Colors.white24, width: 1.0),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black54,
+          offset: Offset(0, 4),
+          blurRadius: 12,
+          spreadRadius: 2,
+        ),
+      ],
     ),
+
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

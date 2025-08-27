@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:njila_app/core/widgets/history_section_card.dart';
 
-Widget historySection() {
+Widget historySection(BuildContext context) {
   return Container(
     margin: EdgeInsets.only(top: 16.0),
     child: Column(
@@ -18,7 +18,9 @@ Widget historySection() {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('/history');
+              },
               child: Text(
                 'See all',
                 style: TextStyle(color: Color(0xFF7B61FF), fontSize: 16.0),
